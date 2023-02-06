@@ -136,4 +136,4 @@ LOGOUT_REDIRECT_URL = "home"
 LOGIN_REDIRECT_URL = "home"
 
 # Crispy Forms Setting
-CRISPY_TEMPLATE_PATH = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
