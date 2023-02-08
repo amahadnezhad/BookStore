@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 
 from .models import Book
-
+from .form import BookForm
 
 class BookListView(generic.ListView):
     model = Book
@@ -13,4 +13,10 @@ class BookListView(generic.ListView):
 class BookDetailView(generic.DetailView):
     model = Book
     template_name = 'books/bookdetail.html'
+
+
+class BookCreateView(generic.CreateView):
+    model = Book
+    form_class = BookForm
+    template_name = 'books/bookcreate.html'
 
