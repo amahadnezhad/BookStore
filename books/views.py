@@ -20,3 +20,9 @@ class BookCreateView(generic.CreateView):
     form_class = BookForm
     template_name = 'books/bookcreate.html'
 
+
+class BookEditView(generic.UpdateView):
+    model = Book
+    fields = ['title', 'author', 'description', 'price']
+    template_name = 'books/book_edit.html'
+
