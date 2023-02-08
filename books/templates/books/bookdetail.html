@@ -10,8 +10,13 @@
         <p>--------</p>
         <p>{{ book.price }}</p>
     <a href="{% url 'book_edit' book.id %}">
-        <button type="submit" class="btn btn-info">
+        <button type="submit" class="btn btn-warning">
             ویرایش
+        </button>
+    </a>
+    <a href="{% url 'book_delete' book.id %}">
+        <button type="submit" class="btn btn-danger">
+            حذف
         </button>
     </a>
     <br>
