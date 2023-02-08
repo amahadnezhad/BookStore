@@ -3,9 +3,16 @@
 
 {% block content %}
     {% for book in books %}
-        <a href="{{ book.get_absolute_url }}"><h1>{{ book.title }}</h1></a>
-        <p>{{ book.description }}</p>
+        <a href="{{ book.get_absolute_url }}" class=""><h1>{{ book.title|capfirst }}</h1></a>
+        <p>{{ book.author|capfirst }}</p>
+        <p>{{ book.description|truncatewords:20|capfirst }}</p>
+        <a class="btn btn-info" href="{% url 'book_detail' book.id %}">
+                Read More
+        </a>
         <p>--------</p>
     {% endfor %}
+    <br>
+    <a href="{% url 'book_create' %}">اضافه کردن کتاب جدید</a>
+
 
 {% endblock content %}

@@ -2,11 +2,11 @@
 {% block page_title %}جزئیات کتاب {{ book.title }}{% endblock page_title%}
 
 {% block content %}
-        <h1>{{ book.title }}</h1>
+        <h1>{{ book.title|capfirst }}</h1>
         <p>--------</p>
-        <p>{{ book.description }}</p>
+        <p>{{ book.description|capfirst|linebreaks }}</p>
         <p>--------</p>
-        <p>{{ book.author }}</p>
+        <p>{{ book.author|capfirst }}</p>
         <p>--------</p>
         <p>{{ book.price }}</p>
     <a href="{% url 'book_edit' book.id %}">
