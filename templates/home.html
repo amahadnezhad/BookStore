@@ -6,6 +6,6 @@
         <p>Welcome {{ user.username|capfirst }} | <a href="{% url 'logout' %}">Logout</a></p>
     {% else %}
         <a href="{% url 'login' %}">Login</a> | <a href="{% url 'signup' %}">Signup</a>
-
     {% endif %}
+    <a href="{% url 'book_list' %}">فروشگاه</a>
 {% endblock content%}
