@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from .models import Book
 from .form import BookForm
 
+
 class BookListView(generic.ListView):
     model = Book
     template_name = 'books/booklist.html'
@@ -24,7 +25,7 @@ class BookCreateView(generic.CreateView):
 
 class BookEditView(generic.UpdateView):
     model = Book
-    fields = ['title', 'author', 'description', 'price']
+    fields = ['title', 'author', 'description', 'price', 'cover',]
     template_name = 'books/book_edit.html'
 
 
