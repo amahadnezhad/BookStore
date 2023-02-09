@@ -132,8 +132,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Authentication Setting
 AUTH_USER_MODEL = 'accounts.CustomUser'
-LOGOUT_REDIRECT_URL = "home"
-LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "book_list"
+LOGIN_REDIRECT_URL = "book_list"
 
 # Crispy Forms Setting
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -3,11 +3,22 @@
 
 {% block page_title %}Signup{% endblock page_title %}
 {% block content %}
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button class="btn btn-success" type="submit">Signup</button>
-    </form>
-    <a href="{% url 'login' %}">Login</a>
+        <div class="d-flex justify-content-center mt-5" dir="rtl">
+            <div class="col-xl-5 col-lg-6 col-md-7 col-sm-7 col-xs-8 bg-white m-3 m-sm-5 border rounded px-4 pt-4 pb-3 shadow">
+                <form method="post">
+                    <h3 class="text-center">ثبت نام</h3>
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-success mt-3 w-100">ثبت نام</button>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="mt-2">
+                            <p>دارای حساب کاربری هستید؟
+                            <a class="text-decoration-none" href="{% url 'login' %}">ورود</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
 {% endblock content %}
