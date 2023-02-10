@@ -22,8 +22,10 @@
                             <h1>{{ book.title }}</h1>
                             <h5 class="small my-1"><span class="text-muted">نویسنده: </span>{{ book.author }}</h5>
                             <h5 class="small my-1"><span class="text-muted">ایجاد کننده: </span>{{ book.user }}</h5>
-                            <a class="btn btn-warning btn-sm" href="{% url 'book_edit' book.id %}">ویرایش</a>
-                            <a class="btn btn-danger btn-sm" href="{% url 'book_delete' book.id %}">حذف</a>
+                            {% if book.user == user %}
+                                <a class="btn btn-warning btn-sm" href="{% url 'book_edit' book.id %}">ویرایش</a>
+                                <a class="btn btn-danger btn-sm" href="{% url 'book_delete' book.id %}">حذف</a>
+                            {% endif %}
                         </div>
                         <div class="col-xs-12 col-md-3 d-flex flex-column">
                             <h3 class="align-self-center pt-2 text-muted align-self-md-end">
@@ -49,7 +51,7 @@
                                     <p>این کتاب را توصیه میکنم</p>
                                 {% else %}
                                     <p>این کتاب را توصیه نــمیکنم</p>
-                                {% endif %} 
+                                {% endif %}
                                 <p>
                                     {{ comment.text|linebreaks }}
                                 </p>
